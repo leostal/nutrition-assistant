@@ -1,0 +1,25 @@
+.inputElement {
+    display: flex;
+    margin-bottom: 24px;
+    flex-direction: column;
+}
+
+.errorText {
+    color: #e53a36;
+    text-align: left;
+    margin-left: 124px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label {
+    width: 100px;
+    font-size: 1em;
+    text-align: start;
+    margin: 0;
+}

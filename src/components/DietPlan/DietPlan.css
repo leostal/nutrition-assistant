@@ -1,0 +1,33 @@
+.container {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wrapperDiet {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+}
+
+.wrapperHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.params {
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+    width: 148px;
+    flex-wrap: wrap;
+}
+
+.param {
+    padding: 0;
+    margin: 4px;
+    text-wrap: nowrap;
+}
