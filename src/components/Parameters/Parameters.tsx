@@ -128,11 +128,12 @@ export const Parameters: FC<IParameters> = ({
 
   const validateForm = () => {
     for (const key in formErrors) {
-      if (formErrors[key]) {
+      if (formErrors[key]?.length > 5 || !formData[key]) {
         setFormValid(false);
         return;
       }
     }
+
     setFormValid(true);
   };
 
@@ -141,7 +142,16 @@ export const Parameters: FC<IParameters> = ({
   }, [formData]);
 
   if (isError) {
-    return <div>Упс! Что-то пошло не так...</div>;
+    return (
+      <>
+        <div style={{ marginTop: '20vh', marginBottom: '16px' }}>
+          Упс! Что-то пошло не так...
+        </div>
+        <button onClick={() => onConfirmClick(formData)}>
+          Попробовать снова
+        </button>
+      </>
+    );
   }
 
   if (isLoading) {
@@ -270,10 +280,7 @@ export const Parameters: FC<IParameters> = ({
         )}
       </div>
 
-      <button
-        onClick={() => onConfirmClick(formData)}
-        disabled={!formValid || !Object.entries(formData)?.length}
-      >
+      <button onClick={() => onConfirmClick(formData)} disabled={!formValid}>
         Сгенерировать рацион
       </button>
     </div>

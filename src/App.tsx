@@ -64,7 +64,7 @@ function App() {
               Нажмите на кнопку <code>Начать</code> для ввода параметров
             </p>
             <button
-              style={{ marginTop: '16px' }}
+              style={{ marginTop: '32px' }}
               onClick={() => setShowParams(true)}
             >
               Начать
