@@ -3,7 +3,7 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import Parameters from './components/Parameters';
 import { IDiet, IUserParams } from './api/types.ts';
-import { createDiet } from './api/create-diet.ts';
+import { createDiet, createMockDiet } from './api/create-diet.ts';
 import DietPlan from './components/DietPlan';
 
 const getTitle = (showParams: boolean, hasDiet: boolean) => {
@@ -29,7 +29,7 @@ function App() {
     setLoading(true);
     setError(false);
     try {
-      const data = await createDiet(formData);
+      const data = await createMockDiet(formData);
 
       setLoading(false);
       setDiet(data);

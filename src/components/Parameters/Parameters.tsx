@@ -167,7 +167,7 @@ export const Parameters: FC<IParameters> = ({
       <Input
         inputName="Имя"
         type="text"
-        placeholder="Иван Иванов"
+        placeholder="Иван"
         value={formData?.name || ''}
         id="personName"
         invalidText={formErrors?.name}
