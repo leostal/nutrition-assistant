@@ -2,7 +2,7 @@ import OpenAI from 'openai';
 import { IDiet, IUserParams } from './types.ts';
 
 const openai = new OpenAI({
-  apiKey: 'My api key',
+  apiKey: 'My api key', // here u can use your api key
   dangerouslyAllowBrowser: true,
 });
 
@@ -49,15 +49,18 @@ export async function createDiet(userParams: IUserParams): Promise<IDiet> {
 }
 
 export async function createMockDiet(userParams: IUserParams): Promise<IDiet> {
+  const { name, age, goal, gender, heightCm, weightKg, activityLevel } =
+    userParams || {};
+
   const mockRes = {
     user: {
-      name: 'Роман',
-      age: 26,
-      gender: 'Male',
-      weightKg: 66,
-      heightCm: 199,
-      activityLevel: 'high',
-      goal: 'weight_maintenance',
+      name: name,
+      age: age,
+      gender: gender,
+      weightKg: weightKg,
+      heightCm: heightCm,
+      activityLevel: activityLevel,
+      goal: goal,
     },
     dietPlan: {
       caloriesPerDay: 2600,
